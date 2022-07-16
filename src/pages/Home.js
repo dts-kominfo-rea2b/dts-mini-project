@@ -1,12 +1,15 @@
 import React from 'react';
 
-const Home = () => {
+import MovieList from '../containers/MovieList';
+import Hero from '../components/hero/Hero'
 
-    
+const Home = () => {
+ 
   return (
-    <div className='home'>
-      hello Home
-    </div>
+    <>
+      <Hero/>
+      <MovieList/>
+    </>
   )
 }
 

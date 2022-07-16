@@ -1,0 +1,23 @@
+.hero-items{
+  display: flex;
+  flex-direction: row; 
+  width : 100%;
+  position: relative;
+  background-size : cover;
+  background-repeat: no-repeat; 
+  
+}
+.hero-bg-image{
+    position: relative;
+}
+.hero-content{
+    color: #fff;
+    position: absolute;
+    top: 0;
+}
+.movie-title img{
+    width : 100%;
+    position: relative;
+    background-size : cover;
+    background-repeat: no-repeat;
+}
