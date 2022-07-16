@@ -8,7 +8,6 @@ export const MovieSlider = ({ data, title, original }) => {
     slidesToScroll: 1,
   };
 
-
   const movies = data;
 
   return (

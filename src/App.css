@@ -1,5 +1,5 @@
 body {
-  background-color: #201F1F;
+  background-color: #201f1f;
 }
 
 .container {
@@ -8,14 +8,15 @@ body {
   margin-bottom: 2%;
 }
 
-.slick-slide {
-  height: 320px;
-  box-sizing: border-box;
+.container-hero {
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
 }
 
 .slick-slide img {
-  height:auto;
-  max-width:100%;
+  height: auto;
+  max-width: 100%;
   border: 2.75px solid rgba(255, 255, 255, 0);
   box-sizing: border-box;
 }
@@ -26,7 +27,6 @@ body {
 .original {
   min-height: 400px;
 }
-
 
 .list-title {
   margin: 0;
