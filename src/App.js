@@ -1,17 +1,9 @@
 import "./App.css";
-
-import MovieSlider from "./components/MovieSlider";
-import { landscape, portrait } from "./components/dummyData";
-import { MovieCarousel } from "./components/MovieCarousel";
-
+import { Homepage } from "./pages/Homepage";
 function App() {
   return (
     <>
-      <MovieCarousel data={landscape} />
-      <MovieSlider title={"Popular Movies"} data={landscape} />
-      <MovieSlider title={"Landscape Movies"} data={landscape} />
-      <MovieSlider title={"Landscape Movies"} data={landscape} />
-      <MovieSlider title={"Portrait Movies"} data={portrait} original={true} />
+      <Homepage />
     </>
   );
 }
