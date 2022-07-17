@@ -1,0 +1,28 @@
+.container-list{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 15vh;
+    background-image: url(../footer-bg.jpg);
+    /* background-color: blue; */
+}
+.list{
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    /* background-color: red; */
+    width: auto;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    gap: 15px;
+    
+}
+
+.list div{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+}

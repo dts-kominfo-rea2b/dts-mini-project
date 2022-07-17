@@ -1,23 +1,53 @@
-.hero-items{
+.hero-items {
   display: flex;
-  flex-direction: row; 
-  width : 100%;
+  flex-direction: row;
+  width: max-content;
+  height: 100%;
   position: relative;
-  background-size : cover;
-  background-repeat: no-repeat; 
-  
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.hero-bg-image{
-    position: relative;
+.hero-bg-image {
+  width: 100%;
 }
-.hero-content{
-    color: #fff;
-    position: absolute;
-    top: 0;
+.hero-bg-image img {
+  position: relative;
+  width: 1920px;
+  height: 100%;
+  margin-top: -40px;
+  /* size-adjust: 100%; */
+
 }
-.movie-title img{
-    width : 100%;
-    position: relative;
-    background-size : cover;
-    background-repeat: no-repeat;
+.heroItems-content {
+  color: #fff;
+  font-size: 15px;
+  position: absolute;
+  left: 5%;
+  bottom: 25%;
+  right: 50%;
 }
+
+/* .hero-title {
+  color: red;
+  font-size: 80px;
+  z-index: 1;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+.hero .arrow-left {
+  color: red;
+  font-size: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+.hero .arrow-right {
+  color: red;
+  font-size: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+} */
