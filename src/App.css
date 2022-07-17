@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
 body {
   background-color: #201f1f;
 }
@@ -15,7 +17,6 @@ body {
 }
 
 .slick-slide img {
-  height: auto;
   max-width: 100%;
   border: 2.75px solid rgba(255, 255, 255, 0);
   box-sizing: border-box;
@@ -32,4 +33,12 @@ body {
   margin: 0;
   color: white;
   padding-bottom: 5px;
+}
+
+.masked {
+  mask-image: linear-gradient(to right, transparent 3%, black);
+}
+
+.movie-information-carousel {
+  font-family: "Inter", sans-serif;
 }
