@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Roboto;
 }
 
 .App-logo {
@@ -26,6 +27,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.nav-inactive {
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.nav-active {
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-underline-offset: 5px;
 }
 
 @keyframes App-logo-spin {
