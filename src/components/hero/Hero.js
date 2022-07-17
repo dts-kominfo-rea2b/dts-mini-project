@@ -1,51 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import "./Hero.css"
+import React, {useState, useEffect} from 'react';
+import { ArrowBackIosRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 
-import SwiperCore, {Autoplay} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
-
+import './Hero.css';
 import tmdb from '../../apis/tmdb';
-// import MovieCard from '../movieCard/MovieCard';
-import HeroItems from './HeroItems';
+
+
+const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
 
 
 const Hero = () => {
-
-    SwiperCore.use([Autoplay]);
-
-    const [movieItems, setMovieItems] = useState([]);
-
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [heroMovies, setHeroMovies] = useState([]);
+    
     useEffect(() => {
         const fetchMovies = async () => {
-            try{
-                const fetchMovies = await tmdb.get("/discover/movie");
-                setMovieItems(fetchMovies.data.results);
-
+            try {
+                const fetchedMovies = await tmdb.get("discover/movie/");
+                setHeroMovies(fetchedMovies.data.results);
             } catch (error) {
                 console.log(error);
             }
         }
+    
         fetchMovies();
-    },[]);
+    }, []);
+
   return (
-    <div className='hero'>
-        <Swiper
-            modules={[Autoplay]}
-            grapCursor={true}
-            spaceBetween={0}
-            slidesPerView={1}
-        >
-            {movieItems.map(movie => (
-            <SwiperSlide>
-              <HeroItems key={movie.title} movie={movie}/>
-            </SwiperSlide>
-                ))
-            }
-        </Swiper>
+    <div className='slider'>
+        <ArrowBackIosRounded className="arrow prev"/>
+        <ArrowForwardIosRounded className="arrow prev"/>
+
+        {tmdb.map(() => {
+            
+        })}
 
     </div>
-  );
+  )
 }
 
 export default Hero
