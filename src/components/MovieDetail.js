@@ -63,7 +63,7 @@ const MovieDetail = () => {
       justify="center"
       style={{ minHeight: '100vh' }}
     >
-      <Card sx={{ maxWidth: '50%',mt:7,mb:5,flexDirection: 'column' }} display={'flex'}>
+      <Card sx={{ maxWidth: '85%',mt:7,mb:5,flexDirection: 'column' }} display={'flex'}>
 
         <CardActionArea>
           <CardMedia
