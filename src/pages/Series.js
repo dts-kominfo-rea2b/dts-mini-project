@@ -1,9 +1,12 @@
 import React from 'react';
+import SeriesList from '../containers/SeriesList';
 
-const Catalog = () => {
+const Series = () => {
   return (
-    <div>Catalog</div>
+    <div>
+      <SeriesList/>
+    </div>
   )
 }
 
-export default Catalog;
+export default Series;

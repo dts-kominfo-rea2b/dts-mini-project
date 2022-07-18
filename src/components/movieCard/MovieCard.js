@@ -12,9 +12,10 @@ const MovieCard = ({ movie }) => {
       <CardMedia className={"media"}
         component="img"
         sx={{
-          width: 200,
-          height: 300,
+          width: 165,
+          height: 250,
           cursor: 'pointer',
+          borderRadius: 5,
           '&:hover' : {opacity: 0.7, transition: "0.5s"}  
         }}
         image={`${BASE_IMAGE_URL}${movie.poster_path}`}

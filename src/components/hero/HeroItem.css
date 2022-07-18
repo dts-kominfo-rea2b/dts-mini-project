@@ -1,6 +1,6 @@
 .hero-items {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   width: max-content;
   height: 100%;
   position: relative;
@@ -13,7 +13,7 @@
 .hero-bg-image img {
   position: relative;
   width: 1920px;
-  height: 100%;
+  height: 100vh;
   margin-top: -40px;
   /* size-adjust: 100%; */
 

@@ -29,7 +29,8 @@
 .list-series div{
 display: grid;
   gap: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(10, 1fr);
+  margin-bottom: 10vh;
 }
 
 

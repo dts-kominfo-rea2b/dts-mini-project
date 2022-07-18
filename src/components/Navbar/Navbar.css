@@ -22,12 +22,21 @@
 .left{
     display: flex;
     align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    justify-content: space-between;
    
 
 }
-.left span{
+/* .left span{
     margin-right: 20px;
     cursor: pointer;
+} */
+.navbar-menu{
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .right{
     display: flex;

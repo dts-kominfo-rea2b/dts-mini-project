@@ -3,7 +3,6 @@
     max-height: 92vh;
 }
 .hero span{
-
     color: white;
     font-size: 80px;
     z-index: 1;
@@ -12,8 +11,10 @@
     top: 10%;
 }
 .hero .hero-slide{
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: max-content;
 }
 .hero-content .arrow-left{
