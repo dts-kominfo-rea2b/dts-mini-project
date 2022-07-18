@@ -119,7 +119,7 @@ const Navbar = () => {
                     </Typography>
 
 
-                    <Box sx={{ display: 'block' }}>
+                    {/* <Box sx={{ display: 'block' }}>
                         {navItems.map((item) => (
                         <NavLink 
                             key={item.link} 
@@ -133,7 +133,7 @@ const Navbar = () => {
                         //   {item.name}
                         // </Button>
                         ))}
-                    </Box>
+                    </Box> */}
 
                     <Search>
                         <SearchIconWrapper>
