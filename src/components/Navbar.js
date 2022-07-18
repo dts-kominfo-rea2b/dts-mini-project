@@ -12,6 +12,7 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -84,6 +85,18 @@ const Navbar = () => {
         }
     };
 
+    
+    const [inputText, setInputText] = React.useState("");
+    const searchHandler = (e) => {
+        //convert input text to lower case
+        
+        var lowerCase = e.target.value.toLowerCase();
+        let keyword = lowerCase.replace(" ","+")
+        setInputText(keyword);
+        navigate(`/search/${keyword}`);
+        console.log(keyword);
+      }
+
     return (
         <Box sx={{ display: 'flex',mt:5,ml:5 }}>
             <AppBar component="nav" sx = {{ background: '#101437' }}>
@@ -129,10 +142,12 @@ const Navbar = () => {
                         <StyledInputBase
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
+                        onChange={searchHandler}
                         />
                     </Search>
 
                     <Box sx={{ display: 'flex' }}>
+                        
                         <Box sx={{ padding: 1 }}>
                             <Logout onClick={onLogout} />
                         </Box>

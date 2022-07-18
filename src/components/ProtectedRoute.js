@@ -13,6 +13,7 @@ const ProtectedRoute = ({ children, loginOnly = true }) => {
   if(user && !loginOnly) {
     return <Navigate to="/"/>;
   }
+
   
   return children;
 };

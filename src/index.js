@@ -13,27 +13,14 @@ import Login from './containers/Login';
 import NoMatch from './containers/NoMatch';
 import Register from './containers/Register';
 import reportWebVitals from './reportWebVitals';
+import MovieDetail from './components/MovieDetail'
+import MovieFinded from './containers/MovieFinded';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={
-          // <ProtectedRoute>
-            <App />
-          // </ProtectedRoute>
-        } />
-        <Route path="login" element={
-          <ProtectedRoute loginOnly={false}>
-            <Login />
-          </ProtectedRoute>} />
-        <Route path="register" element={
-          <ProtectedRoute loginOnly={false}>
-            <Register />
-          </ProtectedRoute>} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
+      <App/>
     </BrowserRouter>
   </React.StrictMode>
 );

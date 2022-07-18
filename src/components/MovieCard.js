@@ -7,13 +7,16 @@ import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Button, Rating } from '@mui/material';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function MovieCard({movie}) {
   const theme = useTheme();
   const BASE_IMAGE_URL = "http://image.tmdb.org/t/p/original";
 
+  const navigate = useNavigate();
+
   const handlerDetail = (id) =>{
-    alert(id);
+    navigate(`/detail/${id}`)
   }
 
   return (
@@ -33,7 +36,7 @@ export default function MovieCard({movie}) {
           <Typography variant="subtitle1" color="text.secondary" component="div">
           {new Date(movie.release_date).getFullYear()}
           </Typography>
-          <Button variant="outlined" size='small' onClick={()=> handlerDetail(movie.id)}>Detail</Button>
+          <Button variant="contained" size='small' onClick={()=> handlerDetail(movie.id)}>Detail</Button>
         </CardContent>
         
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
