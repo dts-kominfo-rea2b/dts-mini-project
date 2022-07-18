@@ -12,6 +12,8 @@ import MovieList from './containers/MovieList';
 import Pricing from './containers/Pricing';
 import Subscribed from './containers/Subscribed';
 import theme from './themes/theme';
+import Login from "./containers/Login";
+import Register from './containers/Register';
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="about" element={<Box sx={{ mt: 10 }}>Halaman about</Box>} />
           <Route path="indonesian" element={<Box sx={{ mt: 10 }}>Halaman indonesian</Box>} />
           <Route path="pricing" element={<Pricing />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="subscribed/:plan" element={<Subscribed />} />
         </Routes>
       </div>
