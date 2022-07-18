@@ -33,8 +33,8 @@ return (
 			component="div" sx={{ flexGrow: 1 }}>
 			MUFEE
 		</Typography>
-		<Button color="inherit">Login</Button>
-    <Button color="inherit">Register</Button>
+		<Button color="inherit" onClick={()=>window.open('/login')}>Login</Button>
+    <Button color="inherit" onClick={()=>window.open('/Register')}>Register</Button>
 		</Toolbar>
 	</AppBar>
 );
