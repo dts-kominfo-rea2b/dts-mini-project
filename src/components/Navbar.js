@@ -1,52 +1,41 @@
-import { MovieFilter } from '@mui/icons-material';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import * as React from "react";
 
-const navItems = [
-  { text: 'Login', link: '/indonesian' },
-  { text: 'Register', link: '/pricing' },
-  { text: 'About', link: '/about' }
-];
+// importing material UI components
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const Navbar = () => {
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar>
-        <Toolbar>
-          <MovieFilter sx={{ display: 'flex', mr: 1 }} />
-          <Typography
-            variant="h6"
-            sx={{
-              flexGrow: 1,
-              display: 'block',
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-            }}
-          >
-            <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/">
-              MUFEE
-            </Link>
-          </Typography>
-          <Box sx={{ display: 'block' }}>
-            {navItems.map((item) => (
-              <NavLink
-                to={item.link}
-                key={item.text}
-                className={({ isActive }) => isActive ? 'nav-active' : 'nav-inactive'}
-              >
-                {item.text}
-              </NavLink>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box >
-  );
+export default function Header() {
+return (
+	<AppBar position="static">
+		<Toolbar>
+		{/*Inside the IconButton, we
+		can render various icons*/}
+		<IconButton
+			size="large"
+			edge="start"
+			color="inherit"
+			aria-label="menu"
+			sx={{ mr: 2 }}
+		>
+			{/*This is a simple Menu
+			Icon wrapped in Icon */}
+			<MenuIcon />
+		</IconButton>
+		{/* The Typography component applies
+		default font weights and sizes */}
+
+		<Typography variant="h6"
+			component="div" sx={{ flexGrow: 1 }}>
+			MUFEE
+		</Typography>
+		<Button color="inherit">Login</Button>
+    <Button color="inherit">Register</Button>
+		</Toolbar>
+	</AppBar>
+);
 }
-
-export default Navbar;

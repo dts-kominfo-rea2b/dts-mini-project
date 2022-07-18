@@ -4,7 +4,7 @@ const theme = createTheme({
     palette: {
         type: 'light',
         primary: {
-          main: '#15858e',
+          main: '#245360',
         },
         secondary: {
           main: '#f50057',
