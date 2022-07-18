@@ -2,6 +2,7 @@ import React from 'react';
 
 import MovieList from '../containers/MovieList';
 import Hero from '../components/hero/Hero'
+import SeriesList from '../containers/SeriesList';
 
 
 
@@ -12,6 +13,7 @@ const Home = () => {
       <div>
       <Hero/>
       <MovieList/>
+      <SeriesList/>
       </div>
     </>
   )

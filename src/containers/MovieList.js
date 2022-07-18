@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import tmdb from "../apis/tmdb";
@@ -23,15 +23,22 @@ const MovieList = () => {
   }, []);
 
   return (
-    <Box className={"container-list"}>
-      <Box className={"list"}>
-        <div>
-          {movies.map((movie) => (
-            <MovieCard key={movie.title} movie={movie}></MovieCard>
-          ))}
+    <>
+      <Box className={"container-list"}>
+        <div className={"title-box"}>
+          <Typography className={"container-title"} variant="h3" component="h3">
+            Trending Movies
+          </Typography>
         </div>
+        <Box className={"list"}>
+          <div>
+            {movies.map((movie) => (
+              <MovieCard key={movie.title} movie={movie}></MovieCard>
+            ))}
+          </div>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

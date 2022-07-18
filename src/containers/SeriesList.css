@@ -1,0 +1,35 @@
+.series-list{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /* background-image: url(../footer-bg.jpg); */
+}
+.series-titleBox{
+    height: 5vh;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5vh;
+    color: white;
+}
+.list-series{
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    /* background-color: red; */
+    width: auto;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    gap: 15px; 
+}
+.list-series div{
+display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+

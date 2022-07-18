@@ -1,5 +1,5 @@
 import { CardMedia } from '@mui/material';
-import Card from '@mui/material/Card';
+
 
 import * as React from 'react';
 import "./MovieCard.css"
