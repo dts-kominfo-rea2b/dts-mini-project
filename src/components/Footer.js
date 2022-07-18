@@ -1,9 +1,6 @@
-import React from 'react';
+import * as React from "react";
 import {
   MDBFooter,
-  MDBContainer,
-  MDBCol,
-  MDBRow,
   MDBIcon
 } from 'mdb-react-ui-kit';
 
@@ -46,33 +43,15 @@ export default function App() {
           >
             <MDBIcon fab icon='instagram' />
           </a>
-
-          <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#0082ca' }}
-            href='#!'
-            role='button'
-          >
-            <MDBIcon fab icon='linkedin-in' />
-          </a>
-
-          <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#333333' }}
-            href='#!'
-            role='button'
-          >
-            <MDBIcon fab icon='github' />
-          </a>
         </section>
       </div>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
-        <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
-      </div>
-    </MDBFooter>
+    <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      © 2022 Copyright &nbsp;
+      <a className='text-dark' href='#!'>
+        muviee.com
+      </a>
+    </div>
+  </MDBFooter>
   );
 }

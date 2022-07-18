@@ -8,7 +8,7 @@ export default function Login() {
       sx={{
         border: "1px solid black",
         bgcolor: "white",
-        width: 400,
+        width: 800,
         height: 400,
         margin: "auto",
         alignItems: "center",
