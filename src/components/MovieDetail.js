@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useEffect, useState } from 'react';
 import tmdb from '../apis/tmdb';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
@@ -55,77 +55,86 @@ const MovieDetail = () => {
   const navigate = useNavigate();
   const budgetX = parseInt(movies.budget).toLocaleString('id-ID');
   return (
-    <Card sx={{ maxWidth: '50%' }} display={'flex'}>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '100vh' }}
+    >
+      <Card sx={{ maxWidth: '50%',mt:7,mb:5,flexDirection: 'column' }} display={'flex'}>
 
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="500"
-          width="200"
-          image={ BASE_IMAGE_URL + movies.poster_path}
-          alt={movies.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {movies.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          {movies.overview}
-          
-          <MDBTable borderless>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="500"
+            width="200"
+            image={ BASE_IMAGE_URL + movies.poster_path}
+            alt={movies.title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {movies.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+            {movies.overview}
             
-            <MDBTableBody>
-              <tr>
-                <td>Date Release</td>
-                <td>:</td>
-                <td>{movies.release_date}</td>
-                
-              </tr>
-              <tr>
-                <td>Budget</td>
-                <td>:</td>
-                <td>$ {budgetX}</td>
-                
-              </tr>
-              <tr>
-                <td>Original_language</td>
-                <td>:</td>
-                <td>{movies.original_language}</td>
-                
-              </tr>
-              <tr>
-                <td>Popularity</td>
-                <td>:</td>
-                <td>{movies.popularity}</td>
-                
-              </tr>
-              {/* <tr>
-                <td>Production Countries</td>
-                <td>:</td>
-                <td>{movies.production_countries[0].name}</td>
-                
-              </tr> */}
-              <tr>
-                <td>Runtime</td>
-                <td>:</td>
-                <td>{movies.runtime} Minutes</td>
-                
-              </tr>
-            </MDBTableBody>
-          </MDBTable>
-          <table>
-            <thead></thead>
-          </table>
-          </Typography>
-          
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary" onClick={()=>navigate('/')}>
-          Back
-        </Button>
-      </CardActions>
-    </Card>
+            <MDBTable borderless>
+              
+              <MDBTableBody>
+                <tr>
+                  <td>Date Release</td>
+                  <td>:</td>
+                  <td>{movies.release_date}</td>
+                  
+                </tr>
+                <tr>
+                  <td>Budget</td>
+                  <td>:</td>
+                  <td>$ {budgetX}</td>
+                  
+                </tr>
+                <tr>
+                  <td>Original_language</td>
+                  <td>:</td>
+                  <td>{movies.original_language}</td>
+                  
+                </tr>
+                <tr>
+                  <td>Popularity</td>
+                  <td>:</td>
+                  <td>{movies.popularity}</td>
+                  
+                </tr>
+                {/* <tr>
+                  <td>Production Countries</td>
+                  <td>:</td>
+                  <td>{movies.production_countries[0].name}</td>
+                  
+                </tr> */}
+                <tr>
+                  <td>Runtime</td>
+                  <td>:</td>
+                  <td>{movies.runtime} Minutes</td>
+                  
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            <table>
+              <thead></thead>
+            </table>
+            </Typography>
+            
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary" onClick={()=>navigate('/')}>
+            Back
+          </Button>
+        </CardActions>
+      </Card>
+    </Grid>
   );
 }
 

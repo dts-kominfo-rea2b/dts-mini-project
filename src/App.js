@@ -10,6 +10,9 @@ import MovieFinded from './containers/MovieFinded';
 import Login from './containers/Login';
 import Register from './containers/Register';
 import NoMatch from './containers/NoMatch';
+import Pricing from './containers/Pricing';
+import Subscribed from './containers/Subscribed';
+import About from './containers/About';
 
 function App() {
   return (
@@ -37,6 +40,11 @@ function App() {
           </ProtectedRoute>
         } />
         <Route path="search/:movie" element={<MovieFinded/>}/>
+        <Route path="about" element={<About/>} />
+        <Route path="indonesian" element={<div style={{margin: "10px"}}>Indonesian</div>} />
+        <Route path="pricing" element={<Pricing/>} />
+        <Route path="subscribed/:plan" element={<Subscribed/>}/>
+        <Route path="subscribed/" element={<Subscribed/>}/>
         
       </Routes>
       <div><Footer/></div>
