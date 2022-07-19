@@ -19,9 +19,8 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar>
           <SvgIcon component={Logo} inheritViewBox sx={{ mr: 5 }} />
-          {navItems.map((item) => {
-            <Button key={item.name}>{item.name}</Button>;
-          })}
+          {navItems.map((item) => <Button color="inherit" key={item.name}>{item.name}</Button>
+          )}
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

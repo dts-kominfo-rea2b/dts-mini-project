@@ -12,7 +12,7 @@ const MovieList = () =>{
             setMovies(response.data.results);
         }
         fetchData();
-    }, []);
+    }, [movies]);
 
     return (
         <Box sx={{ 
