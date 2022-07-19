@@ -1,18 +1,21 @@
-import React from 'react'
-import Home from './pages/home'
-import Login from './pages/login'
-import Register from './pages/register'
-import MovieDetail from './pages/movie-detail'
-import NotFound from './pages/not-found'
+import React from "react";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import MovieDetail from "./pages/movie-detail";
+import NotFound from "./pages/not-found";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 
 import theme from "./styles/theme";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
