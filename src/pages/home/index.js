@@ -1,5 +1,7 @@
+import MovieList from "../../components/MovieList"
+
 const Home = () => {
-    return (<div>Home Page</div>)
+    return <MovieList/>
 }
 
 export default Home
