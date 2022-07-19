@@ -5,15 +5,14 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { auth, registerEmailPassword } from "../auth/firebase";
-import { useNavigate } from "react-router-dom";
+import { registerEmailPassword, auth } from "../config/firebase";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function Copyright(props) {
@@ -25,10 +24,7 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
+      DTS-React-Pair-07 {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -39,7 +35,7 @@ const theme = createTheme();
 function Register() {
   const navigate = useNavigate();
 
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   const [credential, setCredential] = useState({
     email: "",
@@ -139,9 +135,7 @@ function Register() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <Link to={"/login"}>Sudah punya akun? Sign In</Link>
               </Grid>
             </Grid>
           </Box>

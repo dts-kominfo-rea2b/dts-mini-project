@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const ProtectedComponent = ({ children }) => {
+const ProtectedLogin = ({ children }) => {
   const navigate = useNavigate();
   const [user, isLoading] = useAuthState(auth);
 
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
+    if (user) {
+      navigate("/");
       return;
     }
   }, [user, navigate]);
@@ -21,4 +21,4 @@ const ProtectedComponent = ({ children }) => {
   }
 };
 
-export default ProtectedComponent;
+export default ProtectedLogin;

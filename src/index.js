@@ -1,28 +1,72 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from './pages/Home';
-import Series from './pages/Series';
-import Movies from './pages/Movies';
+import Home from "./pages/Home";
+import Series from "./pages/Series";
+import Movies from "./pages/Movies";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ProtectedComponent from "./components/ProtectedComponent";
+import ProtectedLogin from "./components/ProtectedLogin";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App/>}>
-
-          <Route path="/" element={<Home />} /> 
-          <Route path="/home" element={<Home />} /> 
-          <Route path="/movies" element={<Movies/>} />
-          <Route path="/series" element={<Series/>} />
-          
+        <Route
+          path="/"
+          element={
+            <ProtectedComponent>
+              <App />
+            </ProtectedComponent>
+          }
+        >
+          <Route
+            path="/"
+            element={
+              <ProtectedComponent>
+                <Home />
+              </ProtectedComponent>
+            }
+          />
+          <Route
+            path="movies"
+            element={
+              <ProtectedComponent>
+                <Movies />
+              </ProtectedComponent>
+            }
+          />
+          <Route
+            path="series"
+            element={
+              <ProtectedComponent>
+                <Series />
+              </ProtectedComponent>
+            }
+          />
         </Route>
+        <Route
+          path="login"
+          element={
+            <ProtectedLogin>
+              <Login />
+            </ProtectedLogin>
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <ProtectedLogin>
+              <Register />
+            </ProtectedLogin>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
