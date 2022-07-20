@@ -1,3 +1,5 @@
+const copyright = `© ${new Date().getFullYear()} Movies. All Rights Reserved`
+
 const Footer = () => {
     return (
         <>
@@ -9,13 +11,19 @@ const Footer = () => {
 
                 <ul className="list-none mb-0">
                 <li>
-                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Audio</a>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Audio & Subtitles</a>
                 </li>
                 <li>
-                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Subtitle</a>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Media Center</a>
                 </li>
                 <li>
-                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Video Quality</a>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Security</a>
+                </li>
+                <li>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Contact Us</a>
+                </li>
+                <li>
+                    <button className='btn-footer'>Service Code</button>
                 </li>
                 </ul>
             </div>
@@ -31,10 +39,10 @@ const Footer = () => {
                     <a href="#!" className="text-gray-800" style={{color: "white"}}>Legal Provisions</a>
                 </li>
                 <li>
-                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Security</a>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Audio Descriptions</a>
                 </li>
                 <li>
-                    <a href="#!" className="text-gray-800" style={{color: "white"}}>Contact Us</a>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>.</a>
                 </li>
                 </ul>
             </div>
@@ -51,6 +59,9 @@ const Footer = () => {
                 </li>
                 <li>
                     <a href="#!" className="text-gray-800" style={{color: "white"}}>Cookis Prefentions</a>
+                </li>
+                <li>
+                    <a href="#!" className="text-gray-800" style={{color: "white"}}>.</a>
                 </li>
                 </ul>
             </div>
@@ -77,9 +88,9 @@ const Footer = () => {
         </div>
 
         <div className="text-gray-700 text-center p-4" style= {{backgroundColor: "black", color: "white"}}>
-            © 2022 Copyright:
-            <a className="text-gray-800" href="https://tailwind-elements.com/"
-                style={{color: "white"}}>Tailwind Elements & ARG17</a>
+            {copyright}
+            {/* <a className="text-gray-800" href="https://tailwind-elements.com/"
+                style={{color: "white"}}>Tailwind Elements & ARG17</a> */}
         </div>
         </footer>
         {/* <footer>

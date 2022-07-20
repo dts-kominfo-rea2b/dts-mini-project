@@ -18,8 +18,9 @@ import UserLog from './UserLog';
 
 const navItems = [
   { text: 'Home', link: '/' },
-  { text: 'Movie', link: '/home' },
   { text: 'Series', link: '/series' },
+  { text: 'Movies', link: '/movies' },
+  { text: 'Popular', link: '/popular' }
 ];
 //const settings = ['Profile', 'Logout'];
 

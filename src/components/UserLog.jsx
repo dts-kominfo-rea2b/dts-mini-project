@@ -56,7 +56,7 @@ const UserLog = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem>{user.email}</MenuItem>
+        <MenuItem>{user.email.split("@")[0]}</MenuItem>
         <MenuItem onClick={onLogout}>Logout</MenuItem>
       </Menu>
     </> :
