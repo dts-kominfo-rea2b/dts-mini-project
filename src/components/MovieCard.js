@@ -3,12 +3,19 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BASE_IMAGE_URL = "http://image.tmdb.org/t/p/original";
 
 const MovieCard = ({ movie }) => {
+  let navigate = useNavigate();
+
+  const toDetail = (movie) => {
+      // subscription logic here
+      // navigate to success page
+      navigate(`/movie/${movie.id}`)};
   return (
-    <Card id={movie.id} sx={{ display: 'flex', width: 400, margin: 5 }}>
+    <Card id={movie.id} sx={{ display: 'flex', width: 400, margin: 5 }} onClick={() => toDetail(movie)}>
       <CardMedia
         component="img"
         sx={{ width: 150, height: 225 }}

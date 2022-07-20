@@ -13,8 +13,12 @@ import reportWebVitals from './reportWebVitals';
 import Login from './containers/Login';
 import Register from './containers/Register';
 import Pricing from './containers/Pricing';
+import DetailMovie from './containers/DetailMovie';
 import ProtectedRoute from './components/ProtectedRoute';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import NotFound from './containers/NotFound';
+import Subscribed from './containers/Subscribed';
+import About from './containers/About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,6 +41,20 @@ root.render(
         <Route path='pricing' element={
             <Pricing />
         } />
+        <Route path='about' element={
+            <About />
+        } />
+        <Route path="subscribed/:plan" element={
+        <Subscribed />
+        } />
+        <Route path='/movie/:id' element={
+          <ProtectedRoute loginOnly={true}>
+          <DetailMovie />
+        </ProtectedRoute>
+        } />
+        <Route path="*" element={
+        <NotFound />
+        } />        
       </Routes> 
     </BrowserRouter>
   </React.StrictMode>

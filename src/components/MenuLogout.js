@@ -26,7 +26,7 @@ const MenuLogout = () => {
   const onLogout = async () => {
     try {
       await signOut(auth);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
