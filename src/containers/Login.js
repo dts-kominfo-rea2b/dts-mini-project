@@ -1,3 +1,4 @@
+import * as React from 'react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -7,8 +8,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import * as React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, Outlet} from 'react-router-dom';
 import { auth } from '../authentication/firebase';
 
 const Login = () => {
@@ -83,6 +83,7 @@ const Login = () => {
                         </Grid>
                     </Grid>
                 </Box>
+                <Outlet/>
             </Box>
         </Container>
     );

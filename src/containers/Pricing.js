@@ -37,7 +37,7 @@ const Pricing = () => {
             margin: 5,
         }}>
             <Typography component="div" variant="h4" align="center" sx={{ margin: 5 }}>
-                Start Your Endless NONTON Experience Now!
+                Pilih paket MUVIEE kamu!
             </Typography>
             <TableContainer component={Paper}>
                 <Table aria-label="simple table">

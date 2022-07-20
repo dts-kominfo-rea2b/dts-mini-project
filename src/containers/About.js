@@ -10,7 +10,7 @@ const About = () => {
             margin: 5,
         }}>
             <Typography component="div" variant="h4" align="center" sx={{ margin: 5 }}>
-                Who are we?
+                About Us
             </Typography>
             <Link to="description">Description</Link>
             <Link to="services">Services</Link>
