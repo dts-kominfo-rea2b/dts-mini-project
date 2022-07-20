@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import { MovieFilter } from '@mui/icons-material';
 import { alpha, InputBase, styled } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
@@ -5,9 +7,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
-import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
 import MenuLogout from './MenuLogout';
 
 const Search = styled('div')(({ theme }) => ({
