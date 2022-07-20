@@ -1,3 +1,4 @@
+//import Main from "../components/Carousel"
 import PopularMovie from "./PopularMovie"
 import Series from "./Series"
 import TopRatedMovie from "./TopRated"
@@ -7,6 +8,7 @@ const Homepage = () => {
     return (
         <div className='content'>
             <div className='home'>
+                {/* <Main /> */}
                 <PopularMovie />
                 <Series />
                 <Trending />

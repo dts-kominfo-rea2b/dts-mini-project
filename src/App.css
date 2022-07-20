@@ -145,6 +145,45 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.footer {
+  font-size: 15px;
+  background-color: #141414;
+  color: #808080;
+  width: 100%;
+  height: auto;
+  padding: 20px 80px 30px 80px;
+  margin-top: auto;
+}
+
+.footer .footer-links {
+  padding: 0px;
+  column-count: 4;
+  list-style: none;
+}
+
+.footer .footer-links li {
+  width: 150px;
+  margin-bottom: 5px;
+}
+
+.copyright {
+  font-size: 15px;
+  margin-top: 10px;
+}
+.btn-footer {
+  /* Service Code */
+  background-color: #141414;
+  border: 1px solid #808080;
+  /* Gray */
+  color: #808080;
+  /* Inside auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 15px;
+  font-size: 15px;
+
+}
 
 
 

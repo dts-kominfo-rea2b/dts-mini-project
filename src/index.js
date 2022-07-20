@@ -37,6 +37,7 @@ root.render(
           </Route>
           <Route path="movies" element={<Trending/>} />
           <Route path="popular" element={<PopularMovie />} />
+          <Route path="trending" element={<Trending />} />
           <Route path="/movie/:movieId" element={
             <PrivateComponent>
               <DetailMovie />
