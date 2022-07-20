@@ -30,7 +30,7 @@ const Recommendations = ({ movieId }) => {
       {movies &&
         <div className='movie-grid'>
           {movies.map((movie, i) => (
-            <MovieCard movie={movie} index={i} />
+            <MovieCard movie={movie} index={i} key={movie.id} />
           ))}
         </div>}
 

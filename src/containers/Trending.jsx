@@ -44,7 +44,7 @@ const Trending = () => {
    {movies ?
     <div className='movie-grid'>
      {movies.map((movie, i) => (
-      <MovieCard movie={movie} index={i} key={movie.title} />
+      <MovieCard movie={movie} index={i} key={movie.id} />
      ))}
     </div>
     : <div>

@@ -4,8 +4,10 @@ import { Carousel } from "react-responsive-carousel";
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import tmdb from "../apis/tmdb";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
-const Main = () => {
+const Main = ({movie}) => {
     const navigate = useNavigate();
 
     const [movies, setMovies] = useState([]);
@@ -24,7 +26,7 @@ const Main = () => {
     }, []);
 
     const handleClick = () => {
-        navigate(`/movie/${movies.id}`)
+        navigate(`/movie/${movie.id}`)
     }
   
   return (

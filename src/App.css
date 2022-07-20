@@ -58,32 +58,23 @@ body {
   overflow-x: scroll;
   overflow-y: visible;
   width: 100%;
-
 }
-
 .movie-grid .movie-card {
   margin: 18px 5px
 }
-
 .movie-card img {
   max-height: 200px;
   border-radius: 5px;
-
 }
-
 .movie-card img:hover {
   cursor: pointer;
-
 }
-
 .movie-description {
   padding: 15px;
 }
-
 .movie-additional-content {
   padding: 15px;
 }
-
 .movie-backdrop img {
   max-width: 800px;
   width: 100%;

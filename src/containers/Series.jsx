@@ -50,7 +50,7 @@ const Series = () => {
       {series &&
         <div className='movie-grid'>
           {series.map((tv, i) => (
-            <MovieCard movie={tv} index={i} key={tv.name} />
+            <MovieCard movie={tv} index={i} key={tv.id} />
           ))}
         </div>}
 

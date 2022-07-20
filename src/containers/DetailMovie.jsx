@@ -1,10 +1,10 @@
-import { faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tmdb from '../apis/tmdb'
 import Similar from './Similar'
-import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
+//import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
 import Recommendations from './Recommendations'
 //import TopRatedMovie from './TopRated'
 
@@ -27,19 +27,6 @@ const DetailMovie = () => {
             setDetail({});
         }
     }
-
-    // const fetchImages = async () => {
-    //     try {
-    //         const fetchImages = await tmdb.get(`movie/${movieId}/images`)
-    //         console.log(fetchImages.data)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-
-    // const similarMovies = async () => {
-
-    // }
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -66,15 +53,6 @@ const DetailMovie = () => {
                     </div>
                     <div style={{ display: loading ? "none" : "block" }}>
                         <h1>{detail.title}</h1>
-                        <div className='btn-group movie'>
-                            <button className='btn add'>
-                                <FontAwesomeIcon icon={faPlus} /> My List
-                            </button>
-                            <button className='btn video-play'>
-                                <FontAwesomeIcon icon={faCirclePlay} /> Play Video
-                            </button>
-                        </div>
-
                         <img
                             src={`${BASE_IMG_URL}${detail.backdrop_path}`}
                             alt={detail.title}
