@@ -10,6 +10,7 @@ import LoginPage from "./container/LoginPage";
 import MovieDetailPage from "./container/MovieDetailPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ForgotPasswordPage from "./container/ForgotPasswordPage";
+import LogoutPage from "./container/LogoutPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +25,14 @@ root.render(
           element={
             <ProtectedRoute loginOnly={false}>
               <LoginPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='logout'
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <LogoutPage />
             </ProtectedRoute>
           }
         />
