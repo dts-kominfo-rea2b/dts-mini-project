@@ -96,4 +96,4 @@ const MenuLogout = () => {
     </NavLink>)
 }
 
-export default MenuLogout
+export default MenuLogout;

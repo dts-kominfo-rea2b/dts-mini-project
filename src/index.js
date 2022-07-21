@@ -13,6 +13,8 @@ import reportWebVitals from './reportWebVitals';
 import Login from './containers/Login';
 import Register from './containers/Register';
 import ProtectedRoute from './components/ProtectedRoute';
+import MovieDetail from './containers/MovieDetail';
+import MovieSearch from './containers/MovieSearch';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,8 +22,19 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
+          <ProtectedRoute loginOnly={false}>
+            <App />
+          </ProtectedRoute>
+        } />
+        <Route path='home' element={
           <ProtectedRoute>
             <App />
+          </ProtectedRoute>
+        } />
+        <Route path='search/:key' element={<MovieSearch />} />
+        <Route path='moviedetail/:id' element={
+          <ProtectedRoute>
+            <MovieDetail />
           </ProtectedRoute>
         } />
         <Route path='login' element={

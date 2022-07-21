@@ -24,7 +24,7 @@ export default function Footer() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        minHeight: '20vh',
       }}
     >
       <CssBaseline />
@@ -33,14 +33,10 @@ export default function Footer() {
         sx={{
           py: 3,
           px: 2,
-          mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          mt: 'auto'
         }}
       >
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" align="center">
           <Typography variant="body1">
             DTS Mini Project
           </Typography>

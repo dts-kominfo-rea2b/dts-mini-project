@@ -1,15 +1,15 @@
 import './App.css';
 import Footer from './components/Footer';
-import NavBar from './components/Navbar';
 import Home from './containers/Home';
 import theme from './themes/themes';
 import { ThemeProvider } from '@mui/material';
+import ResponsiveBar from './components/ResponsiveBar';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <NavBar />
+        <ResponsiveBar />
         <Home />
         <Footer />
       </div>
