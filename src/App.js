@@ -1,21 +1,25 @@
-import './App.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import "./App.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
-import { Box, ThemeProvider } from '@mui/material';
-import { Route, Routes } from 'react-router-dom';
+import { Box, ThemeProvider } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import MovieList from './containers/MovieList';
-import Pricing from './containers/Pricing';
-import Login from './containers/Login';
-import About from './containers/About';
-import theme from './themes/theme';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./containers/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Register from "./containers/Register";
+import Subscribed from "./containers/Subscribed";
+import DetailMovie from "./containers/DetailMovie";
+import Pricing from "./containers/Pricing";
+import Login from "./containers/Login";
+import About from "./containers/About";
+import theme from "./themes/theme";
+import NotFound from "./containers/NotFound";
 import React, { useRef, useState } from "react";
-import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -23,16 +27,86 @@ const App = () => {
       <div className="App">
         <Navbar></Navbar>
         <Routes>
-          <Route path="/" element={<MovieList />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="about" element={<About />}>
-            <Route path="login" element={<Box sx={{ mt: 10 }}>Provides movies in your hand</Box>} />
-          </Route>
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Home />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="pricing"
+            element={
+              <>
+                <Navbar />
+                <Pricing />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <>
+                <Navbar />
+                <About />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <>
+                <Navbar />
+                <NotFound />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <ProtectedRoute loginOnly={false}>
+                <Login />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <ProtectedRoute loginOnly={false}>
+                <Register />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/movie/:id"
+            element={
+              <ProtectedRoute>
+                <Navbar />
+                <DetailMovie />
+                <Footer />
+              </ProtectedRoute>
+            }
+          />
+                    <Route
+            path="/subscribed/:plan"
+            element={
+              <ProtectedRoute>
+                <Navbar />
+                <Subscribed />
+                <Footer />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
-        <Footer></Footer>
       </div>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

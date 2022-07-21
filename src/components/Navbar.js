@@ -13,7 +13,6 @@ import MenuLogout from './MenuLogout';
 const navItems = [
   { text: 'Home', link: '/' },
   { text: 'Pricing', link: '/pricing' },
-  { text: 'Login', link: '/login' },
   { text: 'About', link: '/about' }
 ];
 
