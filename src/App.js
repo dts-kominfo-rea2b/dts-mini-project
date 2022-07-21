@@ -9,14 +9,14 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import ProfileList from './containers/ProfileList';
 import Footer from './components/Footer';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path='/' element = {
-          [
-          <NavBar />,
+          [<NavBar />,
           <h1>Trending Movies and TV Series</h1>,
           <TrendingList />,
           <br/>,
@@ -25,15 +25,32 @@ function App() {
           <PopMoviesList />,
           <h2>TV Series</h2>,
           <PopSeriesList />,
-          <Footer />,
-          ]
+          <Footer />]
         } />
         <Route path='about' element= {[<NavBar />, <Box>Halaman About</Box>]} />
-        <Route path='movies' element= {[<NavBar />, <Box>Halaman Movies</Box>]} />
-        <Route path='tv-shows' element= {[<NavBar />, <Box>Halaman TV Shows</Box>]} />
+        <Route path='movies' element= {
+          <ProtectedRoute>
+            <NavBar />, 
+            <Box>Halaman Movies</Box>
+          </ProtectedRoute>
+          } />
+        <Route path='tv-shows' element= {
+          <ProtectedRoute>
+            <NavBar />, 
+            <Box>Halaman TV Shows</Box>
+          </ProtectedRoute>
+          } />
         <Route path='profile' element= { [<h1>Who's watching?</h1>, <ProfileList />]} />
-        <Route path='sign-up' element= {<SignUp />} />
-        <Route path='sign-in' element={ <SignIn /> } /> 
+        <Route path='sign-up' element= {
+        <ProtectedRoute loginOnly={false}>
+          <SignUp />
+        </ProtectedRoute>
+        } />
+        <Route path='sign-in' element={ 
+        <ProtectedRoute loginOnly={false}>
+          <SignIn />
+        </ProtectedRoute>
+        } />
       </Routes>
       
     </div>

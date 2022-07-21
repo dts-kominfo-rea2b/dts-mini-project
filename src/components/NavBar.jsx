@@ -2,12 +2,18 @@ import * as React from 'react';
 import { MovieFilter } from '@mui/icons-material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { auth } from '../config/firebase'
+import { signOut } from 'firebase/auth';
 
 const pages = [
     { text: 'Movies', link: '/movies' },
@@ -59,6 +65,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      navigate('/sign-in')
+
+    }).catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
+  }
+  
   return (
     <Box sx={{ 
         display: 'flex', 
@@ -77,9 +96,16 @@ const Navbar = () => {
               fontWeight: 700,
               letterSpacing: '.3rem',
               justifyContent:'flex-start',
+              mr:'0.25em'
             }}
           >
-            FakeFlix
+            <NavLink sx={{ 
+              color: 'inherit', 
+              textDecoration: 'inherit'}}
+                     to='/' className={({ isActive }) => isActive? 'nav-active' : 'nav-inactive'}
+            >
+              FakeFlix
+            </NavLink>
           </Typography>
           <Box sx={{ 
             display: 'flex',
@@ -87,15 +113,17 @@ const Navbar = () => {
             flexGrow: 2
             }}>
             {pages.map((page) => (
-              <NavLink
+              <Button variant='contained' sx={{mr:'1em', boxShadow:'none'}}>
+                <NavLink
                 to={page.link}
                 className={({ isActive }) => isActive? 'nav-active' : 'nav-inactive'}
-              >
+                >
                 {page.text}
-              </NavLink>
+                </NavLink>
+              </Button>
             ))}
           </Box>
-          <Search>
+          <Search sx={{mr:'1em'}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -103,7 +131,10 @@ const Navbar = () => {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-           </Search>
+           </Search> 
+          <IconButton size="large" aria-label="logout" color="inherit" onClick={onLogout}>
+            <AccountCircleIcon />
+          </IconButton>  
         </Toolbar>
       </AppBar>
     </Box>
