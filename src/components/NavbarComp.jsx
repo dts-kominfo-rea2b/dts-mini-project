@@ -73,17 +73,23 @@ const NavbarComp = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar>
-        <Toolbar>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar >
           <Link to="/">
             <img
               src={Movie}
               alt="movie-logo"
-              style={{ height: "44px", width: "36px", marginRight: "200px" }}
+              style={{ height: "44px", width: "36px", marginRight: 40}}
             />
           </Link>
-          <Box sx={{ display: "block" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              alignItems: { xs: "none", md: "center" },
+            }}
+          >
             {navItems.map((item) => (
               <NavLink
                 to={item.link}
@@ -96,7 +102,7 @@ const NavbarComp = () => {
               </NavLink>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 1 }} />
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Search>
               <SearchIconWrapper>
