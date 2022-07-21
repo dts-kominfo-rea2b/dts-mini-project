@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 export const DetailMovie = () => {
   let params = useParams();
 
-  const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState([]);
 
   const idMovie = params?.id;
