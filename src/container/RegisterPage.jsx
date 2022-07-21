@@ -22,7 +22,7 @@ const RegisterPage = () => {
         const password = data.get('password');
         
         try {
-            const { user } = await createUserWithEmailAndPassword(auth, email, password);
+            await createUserWithEmailAndPassword(auth, email, password);
             navigate("/");
         } catch (error) {
             setErrorMessage(error.message);
