@@ -4,7 +4,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import { Box, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -19,7 +19,6 @@ import Login from "./containers/Login";
 import About from "./containers/About";
 import theme from "./themes/theme";
 import NotFound from "./containers/NotFound";
-import React, { useRef, useState } from "react";
 
 const App = () => {
   return (
