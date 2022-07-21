@@ -72,6 +72,7 @@ const App = () => {
             element={
               <ProtectedRoute loginOnly={false}>
                 <Login />
+                <Footer />
               </ProtectedRoute>
             }
           />
@@ -80,6 +81,7 @@ const App = () => {
             element={
               <ProtectedRoute loginOnly={false}>
                 <Register />
+                <Footer />
               </ProtectedRoute>
             }
           />
