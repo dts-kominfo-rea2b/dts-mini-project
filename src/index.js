@@ -8,18 +8,51 @@ import NoPage from "./container/NoPage";
 import RegisterPage from "./container/RegisterPage";
 import LoginPage from "./container/LoginPage";
 import MovieDetailPage from "./container/MovieDetailPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ForgotPasswordPage from "./container/ForgotPasswordPage";
+import LogoutPage from "./container/LogoutPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/movies/:plan" element={<MovieDetailPage />} />
+        <Route path='/' element={<App />}>
+          <Route path='/movies/:plan' element={<MovieDetailPage />} />
         </Route>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="*" element={<NoPage />} />
+        <Route
+          path='login'
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <LoginPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='logout'
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <LogoutPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='register'
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <RegisterPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='forgot-password'
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <ForgotPasswordPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path='*' element={<NoPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

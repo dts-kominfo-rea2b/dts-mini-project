@@ -6,27 +6,29 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { sendPasswordResetEmail } from 'firebase/auth';
 import * as React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import { auth } from '../config/firebase';
 
-const LoginPage = () => {
-  const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = React.useState('');
+const ForgotPasswordPage = () => {
+  const [successMessage, setSuccessMessage] = React.useState("");
+  const [errorMessage, setErrorMessage] = React.useState("");
 
   const handleSubmit = async (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const email = data.get('email');
-      const password = data.get('password');
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get("email");
 
-      try {
-          await signInWithEmailAndPassword(auth, email, password);
-          navigate("/");
-      } catch (error) {
-          setErrorMessage(error.message);
-      }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setErrorMessage("");
+      setSuccessMessage("a password reset email has been sent to " + email);
+    } catch (error) {
+      setSuccessMessage("");
+      setErrorMessage(error.message);
+    }
   };
 
   return (
@@ -45,12 +47,7 @@ const LoginPage = () => {
         <Typography component='h1' variant='h5'>
           Sign in
         </Typography>
-        <Box
-          component='form'
-          onSubmit={handleSubmit}
-          noValidate
-          sx={{ mt: 1 }}
-        >
+        <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
             margin='normal'
             required
@@ -61,16 +58,7 @@ const LoginPage = () => {
             autoComplete='email'
             autoFocus
           />
-          <TextField
-            margin='normal'
-            required
-            fullWidth
-            name='password'
-            label='Password'
-            type='password'
-            id='password'
-            autoComplete='current-password'
-          />
+          <Typography color='blue'>{successMessage}</Typography>
           <Typography color='red'>{errorMessage}</Typography>
           <Button
             type='submit'
@@ -78,12 +66,11 @@ const LoginPage = () => {
             variant='contained'
             sx={{ mt: 3, mb: 2 }}
           >
-            Sign In
+            Send Password Reset Link
           </Button>
           <Grid container>
             <Grid item>
-              <Link to='/register'>{"Don't have an account? Sign Up"}</Link><br />
-              <Link to='/forgot-password'>{"Forgot Password"}</Link>
+              <Link to='/login'>{"Sign in"}</Link>
             </Grid>
           </Grid>
         </Box>
@@ -92,4 +79,4 @@ const LoginPage = () => {
   );
 }
 
-export default LoginPage
+export default ForgotPasswordPage
