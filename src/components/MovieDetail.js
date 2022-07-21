@@ -26,7 +26,7 @@ const MovieDetail = () => {
         });
         return genre.toString();
     }
-
+   
     const lang = () => {
         movies.spoken_languages.forEach(e => {
             lg.push(e.name);
@@ -61,12 +61,13 @@ const MovieDetail = () => {
                         flexDirection: 'row',
                         flexWrap: 'wrap',
                         justifyContent: 'start',
+                        
                     }}>
-                        <Card id={movies.id} sx={{ display: 'flex', width: 700, margin: 5 }}>
+                        <Card id={movies.id} sx={{ display: 'flex', maxWidth: 20000, margin: 5 }}>
                             <CardMedia
                                 component="img"
-                                sx={{ width: 150, height: 255 }}
-                                image={`${BASE_IMAGE_URL}${movies.poster_path}`}
+                                sx={{ maxWidth: 2000, height: 255 }}
+                                image={`${BASE_IMAGE_URL}${movies.backdrop_path}`}
                                 alt="Fantastic Beast"
                             />
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -157,6 +158,7 @@ const MovieDetail = () => {
                                 <Typography variant="subtitle1" color="text.secondary" component="div">
                                     {movies.overview}
                                 </Typography>
+                                
                             </Grid>
                         </Grid>
                     </Box>
@@ -166,7 +168,7 @@ const MovieDetail = () => {
                         flexWrap: 'wrap',
                         justifyContent: 'center',
                     }}>
-
+                    
                     </Box>
                 </Box>
                 <Footer></Footer>
