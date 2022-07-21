@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import tmdb from '../apis/tmdb';
+import CarouselHead from '../components/CarouselHead';
 import MovieCard from '../components/MovieCard';
 
 const MovieList = () => {
@@ -47,11 +48,13 @@ const MovieList = () => {
     }
 
     return (
+        
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
             mt: 5,mb:10
         }}>
+            <CarouselHead></CarouselHead>
             <Box sx={{
                 mt: 5,
                 display: 'flex',

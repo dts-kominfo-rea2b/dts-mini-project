@@ -1,9 +1,11 @@
 body {
   font-family: 'Roboto';
+  
 }
 
 .App {
   font-family: Roboto;
+  
 }
 .App-header {
   background-color: #282c34;
@@ -17,7 +19,7 @@ body {
 }
 
 .NavBar-active{
-  color: rgb(230, 196, 8);
+  color: rgb(231, 199, 18);
   margin: 10px;  
   padding: 15px 25px;
   text-decoration: none;
@@ -36,6 +38,7 @@ body {
 
 .footer{
   margin-top: 1rem;
+  padding-top: 1rem;
   
   position: fixed;
   bottom: 0;
@@ -44,4 +47,17 @@ body {
   background-color: #091429;
   color: aliceblue;
   text-align: center;
+}
+
+.fittingImage {
+  /* width: 800px;
+  height: 400px;
+  object-fit: strech; */
+}
+
+.carouselStyling{
+  background: rgba(16, 14, 54, 0.452);
+}
+.textRating{
+  margin-top: 19px;
 }

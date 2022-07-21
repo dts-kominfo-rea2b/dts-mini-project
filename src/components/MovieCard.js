@@ -20,7 +20,7 @@ export default function MovieCard({movie}) {
   }
 
   return (
-    <Card sx={{ display: 'flex' ,mt:5,ml:5,mr:5, width:350}}>
+    <Card sx={{ display: 'flex' ,mt:5,ml:5,mr:5, width:350}} className="cardMovie">
       <CardMedia
         component="img"
         sx={{ width: 151 }}
@@ -40,8 +40,8 @@ export default function MovieCard({movie}) {
         </CardContent>
         
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-        <Rating sx={{mr:1}} name="read-only" precision={0.1} value={movie.vote_average/2} readOnly />
-        <p>{(movie.vote_average/2).toFixed(2)} / 5</p>
+          <Rating sx={{mr:1}} name="read-only" precision={0.1} value={movie.vote_average/2} readOnly />
+          <p className='textRating'>{(movie.vote_average/2).toFixed(2)} / 5</p>
         </Box>
       </Box>
       
