@@ -11,6 +11,7 @@ import ProfileList from './containers/ProfileList';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import MediaDetail from './components/MediaDetail';
+import About from './containers/About';
 
 function App() {
   return (
@@ -28,16 +29,22 @@ function App() {
           <PopSeriesList />,
           <Footer />]
         } />
-        <Route path='about' element= {[<NavBar />, <Box>Halaman About</Box>]} />
+        <Route path='about' element= {[
+          <NavBar />, 
+          <h1>Work in Progress. Please come back later</h1>,
+          <About />
+        ]} />
         <Route path='movies' element= {
           <ProtectedRoute>
-            <NavBar />, 
+            <NavBar />
+            <h1>Work in Progress. Please come back later</h1> 
             <Box>Halaman Movies</Box>
           </ProtectedRoute>
           } />
         <Route path='tv-shows' element= {
           <ProtectedRoute>
-            <NavBar />, 
+            <NavBar />
+            <h1>Work in Progress. Please come back later</h1>
             <Box>Halaman TV Shows</Box>
           </ProtectedRoute>
           } />
@@ -56,6 +63,7 @@ function App() {
           <ProtectedRoute loginOnly={true}>
             <NavBar />
             <MediaDetail />
+            <Footer />
           </ProtectedRoute>
         } />
       </Routes>
