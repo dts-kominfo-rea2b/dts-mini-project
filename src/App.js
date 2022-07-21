@@ -10,6 +10,7 @@ import SignIn from './components/SignIn';
 import ProfileList from './containers/ProfileList';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
+import MediaDetail from './components/MediaDetail';
 
 function App() {
   return (
@@ -50,6 +51,12 @@ function App() {
         <ProtectedRoute loginOnly={false}>
           <SignIn />
         </ProtectedRoute>
+        } />
+        <Route path='media/:mediaId' element={
+          <ProtectedRoute loginOnly={true}>
+            <NavBar />
+            <MediaDetail />
+          </ProtectedRoute>
         } />
       </Routes>
       
