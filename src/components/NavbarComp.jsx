@@ -16,6 +16,12 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import Collapse from "@mui/material/Collapse";
+import LogoutPage from "../container/LogoutPage";
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../config/firebase';
+import { Alert } from '@mui/material';
 
 const navItems = [
   { text: "Home", link: "/home" },
@@ -66,21 +72,34 @@ const NavbarComp = () => {
     },
   }));
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
+  const navigate = useNavigate();
+
+    const onLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate("/login");
+        } catch (err) {
+            return (
+                <Alert severity="error">{err}</Alert>
+            );
+        }
+    };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar >
+        <Toolbar>
           <Link to="/">
             <img
               src={Movie}
               alt="movie-logo"
-              style={{ height: "44px", width: "36px", marginRight: 40}}
+              style={{ height: "44px", width: "36px", marginRight: 40 }}
             />
           </Link>
           <Box
@@ -120,7 +139,7 @@ const NavbarComp = () => {
             aria-label="show more"
             aria-haspopup="true"
             color="inherit"
-            sx={{ marginX: 3 }}
+            sx={{ marginRight: 2 }}
           >
             <CardGiftcardIcon />
           </IconButton>
@@ -130,7 +149,6 @@ const NavbarComp = () => {
             aria-label="show more"
             aria-haspopup="true"
             color="inherit"
-            sx={{ marginRight: 2 }}
           >
             <NotificationsIcon />
           </IconButton>
@@ -149,6 +167,9 @@ const NavbarComp = () => {
           </List>
         </Toolbar>
       </AppBar>
+      <Collapse in={open} timeout="auto">
+        <LogoutPage onLogout={onLogout}/>
+      </Collapse>
     </Box>
   );
 };

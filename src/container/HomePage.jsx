@@ -6,8 +6,9 @@ import "react-awesome-slider/dist/styles.css";
 import { CardMedia } from "@mui/material";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import Box from "@mui/material/Box";
 
 import tmdb from "../apis/tmdb";
 const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/original";
@@ -44,36 +45,39 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <Box sx={{ flexGrow: 1, backgroundColor: "#000000" }}>
       <NavbarComp />
-      <AwesomeSlider style={{ height: 700 }}>
+      <AwesomeSlider>
         {moviesSlider.map((movie) => (
           <Card id={movie.id}>
             <CardMedia
               component="img"
-              sx={{ width: 1900, height: "auto" }}
+              sx={{ width: 1900, height: "500" }}
               image={`${BASE_IMAGE_URL}${movie.poster_path}`}
               alt="Movie poster"
             />
           </Card>
         ))}
       </AwesomeSlider>
-      <Typography variant="h5" sx={{ mt: 10, fontWeight: 'bold' }}>
+      <Typography
+        variant="h5"
+        sx={{ marginY: 5, fontWeight: "bold", color: "white" }}
+      >
         Popular
       </Typography>
-      <ImageList sx={{ width: 1900, height: 450 }} cols={4}>
-      {moviesPopular.map((item) => (
-        <ImageListItem key={item.id}>
-          <img
-            src={`${BASE_IMAGE_URL}${item.poster_path}`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+      <ImageList cols={6}>
+        {moviesPopular.map((item) => (
+          <ImageListItem key={item.id}>
+            <img
+              src={`${BASE_IMAGE_URL}${item.poster_path}`}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
       <FooterComp />
-    </div>
+    </Box>
   );
 };
 
